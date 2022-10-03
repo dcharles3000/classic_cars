@@ -143,6 +143,8 @@ export const fetchNftOwner = async (minterContract, index) => {
   }
 };
 
+// function to buy nft
+// calls the buyClassicCar function from the smart contract
 export async function buyNft (minterContract, tokenId, performActions) {
   try {
     await performActions(async function(kit) {
@@ -156,6 +158,8 @@ export async function buyNft (minterContract, tokenId, performActions) {
   }
 };
 
+// function to gift nft
+// calls the giftClassicCar function from the smart contract
 export async function giftNft (minterContract, tokenId, recipientAddress, performActions) {
   try {
     await performActions(async function(kit) {
@@ -168,6 +172,8 @@ export async function giftNft (minterContract, tokenId, recipientAddress, perfor
   }
 };
 
+// function to resell nft
+// calls the resellClassicCar function from the smart contract
 export async function resellNft (minterContract, tokenId, newPrice, performActions) {
   try {
     await performActions(async function(kit) {

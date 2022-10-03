@@ -11,6 +11,8 @@ const NftCard = ({ nft, changeNftData, buy }) => {
   const { kit } = useContractKit();
   const { defaultAccount } = kit;
 
+  // Card button function to display a particular button depending on the
+  // the owner of the Nft and the contract being displayed
   function cardButton(owner, contractAdd, sold, market, price) {
     if(owner === contractAdd) {
       if(market) { return <Popup save={nftData} name={`Gift ${price / 10**18}cUSD`} /> }
@@ -24,6 +26,8 @@ const NftCard = ({ nft, changeNftData, buy }) => {
     }
   }
   
+  // nftData gotten from the pop up component
+  // data will be passed to the index.js component for use
   async function nftData(formData) {
     changeNftData({
       ...formData,
@@ -37,8 +41,8 @@ const NftCard = ({ nft, changeNftData, buy }) => {
       <Card className="h-100 position-relative">
         { sold && (owner !== defaultAccount) ? (
           <div
-            className="position-absolute top-0 start-0 w-100 h-100"
-            style={{ backgroundColor: "#ffffffd7", zIndex: "2", borderRadius: "inherit"}}
+            className="position-absolute start-0 w-100 h-100"
+            style={{ backgroundColor: "#ffffffd7", borderRadius: "inherit"}}
           >
           </div>
           ) : (
@@ -58,7 +62,12 @@ const NftCard = ({ nft, changeNftData, buy }) => {
         </Card.Header>
 
         <div className=" ratio ratio-4x3">
-          <img src={image} alt={description} style={{ objectFit: "cover" }} />
+          { sold && (owner !== defaultAccount) ? (
+            <img src={image} alt={description} style={{objectFit:"cover", opacity:"0.4"}} />
+          ) : (
+            <img src={image} alt={description} style={{objectFit:"cover"}} />
+          )
+        }  
         </div>
 
         <Card.Body className="d-flex flex-column text-center">

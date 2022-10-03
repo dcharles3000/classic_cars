@@ -6,6 +6,8 @@ import AddNfts from "./Add";
 import Nft from "./Card";
 import Loader from "../../ui/Loader";
 import { NotificationSuccess, NotificationError } from "../../ui/Notifications";
+import { Row } from "react-bootstrap";
+import { ethers } from "ethers";
 import {
   getNfts,
   createNft,
@@ -13,8 +15,6 @@ import {
   giftNft,
   resellNft
 } from "../../../utils/minter";
-import { Row } from "react-bootstrap";
-import { ethers } from "ethers";
 
 const NftList = ({ minterContract, name }) => {
   const { performActions, address } = useContractKit();
@@ -34,6 +34,9 @@ const NftList = ({ minterContract, name }) => {
     }
   }, [minterContract]);
 
+  // function to add new nft to the nft lists
+  // uses the data received from the Add.js component
+  // 
   const addAsset = async (data) => {
     try {
       setLoading(true);
@@ -48,6 +51,9 @@ const NftList = ({ minterContract, name }) => {
     }
   };
 
+  // function to change the data of the nft stored
+  // only the owner of the nft and the price can be changed
+  // uses the data gotten from the Card.js component
   async function changeAsset(formData) {
     console.log(formData);
     const {data, name, index} = formData;
@@ -69,6 +75,10 @@ const NftList = ({ minterContract, name }) => {
     }
   }
 
+  // funtion to buy nft
+  // uses the token id(index) of the nft
+  // to call the buyNft function imported
+  // from the minter.js file
   async function buyAsset(tokenId) {
     const {index} = tokenId
     console.log(index)

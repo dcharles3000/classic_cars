@@ -12,8 +12,8 @@ export const useBalance = () => {
   }, [address, kit]);
 
   useEffect(() => {
-    if (address) getBalance();
-  }, [address, getBalance]);
+    if (address || balance) getBalance();
+  }, [address, getBalance, balance]);
 
   return {
     balance,
