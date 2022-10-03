@@ -25,7 +25,7 @@ git clone https://github.com/dacadeorg/celo-react-boilerplate.git
 ### 2.2 Navigate to the directory:
 
 ```bash
-cd celo-react-boilerplate
+cd classic_cars
 ```
 
 ### 2.3 Install the dependencies:
@@ -68,3 +68,25 @@ npx hardhat run --network alfajores scripts/deploy.js
 ```
 
 This command will update the src/contract files with the deployed smart contract ABI and contract address.
+   
+<!-- CONTRIBUTING -->
+
+## :writing_hand: Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any
+contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also
+simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your new feature branch (`git checkout -b feature/newfeature`)
+3. Commit your changes (`git commit -m 'added a/some new feature(s)'`)
+4. Push to the branch (`git push origin feature/newfeature`)
+5. Open a pull request
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+#  Thank you
