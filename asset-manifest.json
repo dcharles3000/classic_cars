@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/classic_cars/static/css/main.e1ce61ea.chunk.css",
-    "main.js": "/classic_cars/static/js/main.eba86b5e.chunk.js",
-    "main.js.map": "/classic_cars/static/js/main.eba86b5e.chunk.js.map",
+    "main.js": "/classic_cars/static/js/main.b9537f3a.chunk.js",
+    "main.js.map": "/classic_cars/static/js/main.b9537f3a.chunk.js.map",
     "runtime-main.js": "/classic_cars/static/js/runtime-main.a589560f.js",
     "runtime-main.js.map": "/classic_cars/static/js/runtime-main.a589560f.js.map",
     "static/css/2.84fe5be7.chunk.css": "/classic_cars/static/css/2.84fe5be7.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.84fe5be7.chunk.css",
     "static/js/2.f9e7a4a5.chunk.js",
     "static/css/main.e1ce61ea.chunk.css",
-    "static/js/main.eba86b5e.chunk.js"
+    "static/js/main.b9537f3a.chunk.js"
   ]
 }
