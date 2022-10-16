@@ -58,7 +58,10 @@ const NftList = ({ minterContract, name }) => {
     console.log(formData);
     const {data, name, index} = formData;
 
-    if(name === "Gift") {
+    console.log(name);
+
+
+    if(name.includes("Gift")) {
       console.log(`Gift index of ${index}, to: ${data}`)
       await giftNft(minterContract, index, data, performActions);
 

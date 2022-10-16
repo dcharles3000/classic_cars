@@ -17,6 +17,11 @@ const Popup = ({ save, name }) => {
     // display the popup modal
   const handleShow = () => setShow(true);
 
+  function popupName() {
+    if(name.includes("Gift")) return "Gift";
+    else if (name.includes("Resell")) return "Resell";
+  }
+
   return (
     <>
       <Button
@@ -30,14 +35,14 @@ const Popup = ({ save, name }) => {
         {/* Modal */}
       <Modal show={show} onHide={handleClose} centered>
         <Modal.Header closeButton>
-          <Modal.Title>{name} Classic Car NFT</Modal.Title>
+          <Modal.Title>{popupName()} Classic Car NFT</Modal.Title>
         </Modal.Header>
   
         <Modal.Body>
           <Form>
             <Form.Control
               type="text"
-              placeholder={name}
+              placeholder={popupName()}
               style={{ height: "45px" }}
               onChange={(e) => {
                 setData(e.target.value);
@@ -54,6 +59,7 @@ const Popup = ({ save, name }) => {
             variant="primary"
             disabled={!isFormFilled()}
             onClick={() => {
+              const name = popupName()
               save({
                 data,
                 name
@@ -61,7 +67,7 @@ const Popup = ({ save, name }) => {
               handleClose();
             }}
           >
-            {name} NFT
+            {popupName()} NFT
           </Button>
         </Modal.Footer>
       </Modal>
